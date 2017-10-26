@@ -19,3 +19,7 @@ scores = [1, 2, 3, 7, 4, 5]
 print (sum(scores))
 
 print (max(scores))
+
+print (average(scores))
+
+print (average_drop2(scores))

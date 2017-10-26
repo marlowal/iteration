@@ -50,3 +50,30 @@ def max(numbers):
 # HW 
 	#a funtion - average
 	#b 2nd function also finds average but drops lowest 2 scores
+
+def average(list):
+	total = 0
+	for n in list:
+		total += n
+	average = total / len(list)
+
+	return average
+
+def drop_2(list):
+	for counter in range (2):
+		current_min = list[0]
+		for n in list:
+			if n < current_min:
+				current_min = n
+
+		list.remove(current_min)
+
+def average_drop2(list):
+	drop_2(list)
+
+	total = 0
+	for n in list:
+		total += n
+	average = total / float(len(list))
+
+	return average
