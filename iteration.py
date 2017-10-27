@@ -55,25 +55,57 @@ def average(list):
 	total = 0
 	for n in list:
 		total += n
-	average = total / len(list)
+	average = float(total) / len(list)
 
 	return average
 
 def drop_2(list):
-	for counter in range (2):
-		current_min = list[0]
+	working_list = list.copy()
+	current_min1 = list[0]
+
+	for counter in range(2):
+		current_min = working_list[0]
 		for n in list:
 			if n < current_min:
 				current_min = n
 
-		list.remove(current_min)
+		working_list.remove(current_min)
+	
 
 def average_drop2(list):
-	drop_2(list)
+	current_min1 = list[0]
+	for n in list:
+		if n < current_min1:
+			current_min1 = n
+
+	if list[0] != current_min1:
+		current_min2 = list[0]
+		for n in list:
+			if current_min1 != n and n < current_min2:
+				current_min = n
+	else:
+		current_min2 = list[1]
+		for n in list:
+			if current_min1 != n and n < current_min2:
+				current_min = n
+
 
 	total = 0
 	for n in list:
 		total += n
-	average = total / float(len(list))
+
+	total -= current_min1
+	total -= current_min2
+
+	average = float(total) / (len(list) - 2)
 
 	return average
+
+
+#def alternating_sum(numbers):
+	#total = 0
+	#for float(len(numbers) / 2) in numbers:
+		#total += n
+		#total -= n
+
+
