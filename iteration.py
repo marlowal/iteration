@@ -102,10 +102,13 @@ def average_drop2(list):
 	return average
 
 
-#def alternating_sum(numbers):
-	#total = 0
-	#for float(len(numbers) / 2) in numbers:
-		#total += n
-		#total -= n
+def alternating_sum(numbers):
+	total = 0
 
+	for i in range(0, len(numbers)):
+		if i % 2 == 0:
+			total += numbers[i]
+		elif i % 2 == 1:
+			total -= numbers[i]
 
+	return total
